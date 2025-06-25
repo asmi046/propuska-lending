@@ -20,13 +20,60 @@
         'resources/js/app.js',
         'public/scss/main.scss'
     ])
+
+    <script>
+        window.Laravel = {
+            assetUrl: '{{ asset('') }}',
+            storageUrl: '{{ Storage::url('') }}'
+        };
+    </script>
 </head>
 <body>
     @include("allicon")
+    <header class="header" id="header">
+        <div class="container header__container">
+            <div class="header__logo logo">
+                <img src="{{ asset('img/logo.svg') }}" alt="Логотип компании" class="logo__image">
+            </div>
+            <div class="header__actions actions">
+                <a href="#consult" type="button" class="actions__button button">Заказать звонок</a>
+            </div>
+
+            <div class="header__actions actions_mobile">
+                <a href="#consult" type="button" class="actions__button button">
+                    <svg class="sprite_icon">
+                        <use xlink:href="#call_icon"></use>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </header>
+
     <main id="main">
         @yield('main')
     </main>
 
+
+    <footer class="footer" id="footer">
+        <div class="container footer__container">
+            <div class="footer__top">
+            <div class="footer__left copyright">
+                <p class="copyright__text">© 2025 Проверка пропусков на МКАД. Все права защищены.</p>
+            </div>
+            <div class="footer__right policy-links">
+                <a href="/policy" class="policy-links__link">Политика конфиденциальности</a>
+                <a href="/personal-data" class="policy-links__link">Согласие на обработку персональных данных</a>
+            </div>
+            </div>
+            <div class="footer__bottom info-block">
+            <p class="info-block__text">
+                Информация, предоставленная на данном сайте не является публичной офертой или коммерческим предложением.
+                Вся информация размещена с ознакомительной целью. Мы используем cookie-файлы для удобства использования данного сайта.
+                Оставаясь на сайте, вы соглашаетесь с использованием файлов cookie.
+            </p>
+            </div>
+        </div>
+    </footer>
     <div class="modal_win" id="global_app">
         <modal-window rout="/send_consult" redirect="/thencs" hesh="consult" title="Помощь специалиста" subtitle="Мы свяжемся с Вами в течении 15 минут"></modal-window>
         <empty-modal hesh="cityselect" title="Выбор города" subtitle="Выберите город в котором вы проживаете">
