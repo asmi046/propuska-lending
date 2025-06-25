@@ -1,5 +1,54 @@
 @use 'vars' as *;
 
-header{
+.header {
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
 
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: $conteiner_max_w;
+    margin: 0 auto;
+    padding-bottom: 20px;
+    border-bottom: 1px solid $gray_bg_color;
+  }
+}
+
+.actions_mobile {
+    display: none;
+    .sprite_icon {
+        fill: white;
+        width:25px;
+        height:25px;
+    }
+}
+
+.logo {
+    &__image {
+        max-height: 40px;
+        width: auto;
+    }
+
+    img {
+        width: 250px;
+        object-fit: contain;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .actions {
+        display: none;
+    }
+
+    .actions_mobile {
+        display: flex;
+        .button {
+            padding: 10px;
+        }
+
+    }
 }

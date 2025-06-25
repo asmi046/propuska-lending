@@ -22,8 +22,16 @@
     ])
 </head>
 <body>
+    @include("allicon")
     <main id="main">
         @yield('main')
     </main>
+
+    <div class="modal_win" id="global_app">
+        <modal-window rout="/send_consult" redirect="/thencs" hesh="consult" title="Помощь специалиста" subtitle="Мы свяжемся с Вами в течении 15 минут"></modal-window>
+        <empty-modal hesh="cityselect" title="Выбор города" subtitle="Выберите город в котором вы проживаете">
+            // нужное в слот
+        </empty-modal>
+    </div>
 </body>
 </html>

@@ -9,9 +9,14 @@
 @use "form/all-form";
 @use "elements/all-elements";
 
+@use "text_icon";
+
 @use "current";
+@use "header";
+@use "banner";
 
 @use "modal";
+@use "pass_table";
 
 // Схема с сайдбаром
 // @use "sidebar-schem";
