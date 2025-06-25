@@ -15,6 +15,8 @@
 
     <meta name="_token" content="{{ csrf_token() }}">
 
+    <script src="https://www.google.com/recaptcha/api.js?render=6Ld9iewpAAAAAO66gDOa5ovCsrhc2PkZDo09qkiR"></script>
+
     @vite([
         'resources/css/app.css',
         'resources/js/app.js',

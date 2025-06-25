@@ -24,9 +24,8 @@
         </template>
     </pass-check>
 
-    <!-- resources/views/sections/grid-table-section.blade.php -->
 
-    <section class="grid-table" id="grid-table">
+    {{-- <section class="grid-table" id="grid-table">
     <div class="container grid-table__container">
         <div class="grid-table__header">
         <div class="grid-table__cell" data-label="Госномер">Госномер</div>
@@ -64,11 +63,10 @@
         <div class="grid-table__cell" data-label="Статус">365</div>
         </div>
     </div>
-    </section>
+    </section> --}}
 
 </div>
 
-<!-- resources/views/sections/banner-section.blade.php -->
 
 <section class="banner-section" id="banner-section">
     <div class="container banner-section__container">
