@@ -80,64 +80,72 @@
     </div>
 </section>
 
-<section class="table-section" id="table-section">
-    <div class="container table-section__container">
-        <table class="table">
-            <thead>
-                <tr class="table__header">
-                    <th scope="col">Госномер</th>
-                    <th scope="col">Тип пропуска</th>
-                    <th scope="col">БА номер</th>
-                    <th scope="col">Дата начала действия</th>
-                    <th scope="col">Дата окончания действия</th>
-                    <th scope="col">Статус</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="table__row ">
-                    <td>M986EY198</td>
-                    <td>СК (Дневной)</td>
-                    <td>БА 1953218</td>
-                    <td>05.06.2025</td>
-                    <td>03.06.2026</td>
-                    <td>Аннулирован</td>
-                </tr>
-                <tr class="table__row table__row--annulled">
-                    <td>M986EY198</td>
-                    <td>СК (Дневной)</td>
-                    <td>БА 1953218</td>
-                    <td>05.06.2025</td>
-                    <td>03.06.2026</td>
-                    <td>Аннулирован</td>
-                </tr>
-                <tr class="table__row ">
-                    <td>M986EY198</td>
-                    <td>СК (Дневной)</td>
-                    <td>БА 1953218</td>
-                    <td>05.06.2025</td>
-                    <td>03.06.2026</td>
-                    <td>365</td>
-                </tr>
-                <tr class="table__row table__row--active">
-                    <td>M986EY198</td>
-                    <td>СК (Дневной)</td>
-                    <td>БА 1953218</td>
-                    <td>05.06.2025</td>
-                    <td>03.06.2026</td>
-                    <td>365</td>
-                </tr>
-                <tr class="table__row ">
-                    <td>M986EY198</td>
-                    <td>СК (Дневной)</td>
-                    <td>БА 1953218</td>
-                    <td>05.06.2025</td>
-                    <td>03.06.2026</td>
-                    <td>365</td>
-                </tr>
-            </tbody>
-        </table>
+<!-- resources/views/sections/grid-table-section.blade.php -->
+
+<section class="grid-table" id="grid-table">
+  <div class="container grid-table__container">
+    <div class="grid-table__header">
+      <div class="grid-table__cell" data-label="Госномер">Госномер</div>
+      <div class="grid-table__cell" data-label="Тип пропуска">Тип пропуска</div>
+      <div class="grid-table__cell" data-label="БА номер">БА номер</div>
+      <div class="grid-table__cell" data-label="Дата начала действия">Дата начала действия</div>
+      <div class="grid-table__cell" data-label="Дата окончания действия">Дата окончания действия</div>
+      <div class="grid-table__cell" data-label="Статус">Статус</div>
+    </div>
+
+    <div class="grid-table__row">
+      <div class="grid-table__cell" data-label="Госномер">M986EY198</div>
+      <div class="grid-table__cell" data-label="Тип пропуска">СК (Дневной)</div>
+      <div class="grid-table__cell" data-label="БА номер">БА 1953218</div>
+      <div class="grid-table__cell" data-label="Дата начала действия">05.06.2025</div>
+      <div class="grid-table__cell" data-label="Дата окончания действия">03.06.2026</div>
+      <div class="grid-table__cell" data-label="Статус">Аннулирован</div>
+    </div>
+
+    <div class="grid-table__row grid-table__row--annulled">
+      <div class="grid-table__cell" data-label="Госномер">M986EY198</div>
+      <div class="grid-table__cell" data-label="Тип пропуска">СК (Дневной)</div>
+      <div class="grid-table__cell" data-label="БА номер">БА 1953218</div>
+      <div class="grid-table__cell" data-label="Дата начала действия">05.06.2025</div>
+      <div class="grid-table__cell" data-label="Дата окончания действия">03.06.2026</div>
+      <div class="grid-table__cell" data-label="Статус">Аннулирован</div>
+    </div>
+
+    <div class="grid-table__row grid-table__row--active">
+      <div class="grid-table__cell" data-label="Госномер">M986EY198</div>
+      <div class="grid-table__cell" data-label="Тип пропуска">СК (Дневной)</div>
+      <div class="grid-table__cell" data-label="БА номер">БА 1953218</div>
+      <div class="grid-table__cell" data-label="Дата начала действия">05.06.2025</div>
+      <div class="grid-table__cell" data-label="Дата окончания действия">03.06.2026</div>
+      <div class="grid-table__cell" data-label="Статус">365</div>
+    </div>
+  </div>
+</section>
+
+<!-- resources/views/sections/banner-section.blade.php -->
+
+<section class="banner-section" id="banner-section">
+    <div class="container banner-section__container">
+        <div class="banner-section__content">
+            <div class="banner-section__overlay"></div>
+            <div class="banner-section__left left-content">
+                <h2 class="left-content__title">Помощь в оформлении пропуска</h2>
+                <div class="left-content__permits">
+                    <img src="{{ asset('img/propuska/propusk-1.webp') }}" alt="МКАД" class="left-content__permit">
+                    <img src="{{ asset('img/propuska/propusk-2.webp') }}" alt="ТТК" class="left-content__permit">
+                    <img src="{{ asset('img/propuska/propusk-3.webp') }}" alt="СК" class="left-content__permit">
+                </div>
+            </div>
+            <div class="banner-section__right right-content">
+                <div class="right-content__price">
+                    <span class="right-content__price-text">от 8000 ₽</span>
+                    <span class="right-content__price-subtext">годовой пропуск</span>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
+
 
 @endsection
 

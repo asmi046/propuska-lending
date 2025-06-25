@@ -1,69 +1,108 @@
+// scss/_grid-table.scss
+
 @use 'vars' as *;
 
-
-.table {
-  width: 100%;
-  border-collapse: collapse;
+.grid-table {
   font-size: 14px;
   font-family: $main_fonts;
 }
 
-.table__header {
-  th {
+.grid-table__container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0;
+  border-radius: 0; // Убрано скругление
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.grid-table__header {
+  display: contents;
+
+  .grid-table__cell {
     padding: 1rem;
     text-align: left;
-    color: #fff;
+    color: $black_color;
     font-family: $head_fonts;
     font-weight: bold;
-    background-color: $main_color;
-    border: none;
-    background-color:  unset;
-    color:black
+    background-color: #ffffff; // Шапка белая
+    border-top: none;
+    border-bottom: 1px solid $gray_bg_color;
   }
 }
 
-.table__row {
-  &,
-  td {
-    border-top: 1px solid $gray_bg_color;
-    border-bottom: 1px solid $gray_bg_color;
-    border-left: none;
-    border-right: none;
-    padding: 1rem;
-    vertical-align: middle;
-  }
-
-  &:first-child td {
-    border-top: none;
-  }
-
-  &:last-child td {
-    border-bottom: none;
-  }
+.grid-table__row {
+  display: contents;
 
   &--annulled {
     background-color: $annul_pass_color;
+    .grid-table__cell {
+        background-color: $annul_pass_color;
+    }
   }
 
   &--active {
     background-color: $active_pass_color;
+    .grid-table__cell {
+        background-color: $active_pass_color;
+    }
   }
 }
 
+.grid-table__cell {
+  padding: 1rem;
+  border-top: 1px solid $gray_bg_color;
+  border-bottom: 1px solid $gray_bg_color;
+  vertical-align: middle;
+  background-color: transparent;
+}
+
 @media (max-width: 768px) {
-  .table {
+  .grid-table__container,
+  .grid-table__row {
     display: block;
-    overflow-x: auto;
   }
 
-  .table__row {
-    display: flex;
-    flex-direction: column;
+  .grid-table__header {
+    display: none;
   }
 
-  .table__row > td::before {
+  .grid-table__row {
+    border: 1px solid $gray_bg_color;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: $border_rad;
+
+      &--annulled {
+            .grid-table__cell {
+                background-color: unset;
+            }
+        }
+
+        &--active {
+            .grid-table__cell {
+                background-color: unset;
+            }
+        }
+  }
+
+  .grid-table__cell {
+    display: block;
+    padding: 0.2rem 0;
+    background-color: unset;
+    border-top: none;
+    &:last-child {
+        border-bottom: none;
+    }
+  }
+
+  .grid-table__cell::before {
     content: attr(data-label);
+    display: inline-block;
     font-weight: bold;
-    margin-bottom: 0.5rem;
+    width: 140px; // фиксированная ширина для выравнивания
+    min-width: 140px;
+    margin-right: 0.5rem;
+    vertical-align: top;
   }
 }

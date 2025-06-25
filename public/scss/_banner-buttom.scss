@@ -1,0 +1,138 @@
+@use 'vars' as *;
+
+.banner-section {
+  position: relative;
+  overflow: hidden;
+
+
+  &__container {
+    background-image: url('../img/bn_bg.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: $border_rad;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: $conteiner_max_w;
+    margin: 0 auto;
+    gap: 2rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  &__overlay {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.65);
+    z-index: 1;
+    border-radius: $border_rad;
+  }
+}
+
+.left-content {
+    z-index: 2;
+    padding-left: 40px;
+    margin-top: auto;
+    &__title {
+        font-family: $head_fonts;
+        font-size: 48px;
+        color: #fff;
+        margin-bottom: 1.5rem;
+        z-index: 2;
+    }
+
+    &__permits {
+        display: flex;
+        gap: 1rem;
+        z-index: 2;
+    }
+
+    &__permit {
+        width: 100%;
+        max-width: 155px; // ✅ Обновлено
+        box-shadow: $box_shadow;
+    }
+}
+
+.right-content {
+  padding-right: 40px; // ✅ Новое
+  background-color: $main_color;
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 0; // ✅ Скругление убрано
+  z-index: 2;
+    margin-right: 40px;
+
+  &__price {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__price-text {
+    font-family: $head_fonts;
+    font-size: 72px;
+    font-weight: bold;
+  }
+
+  &__price-subtext {
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    text-transform: uppercase;
+    color: #000; // ✅ Текст стал черным
+  }
+}
+
+@media (max-width: 768px) {
+
+  .banner-section__content {
+    flex-direction: column;
+    gap: 2rem;
+    overflow: hidden;
+  }
+
+  .left-content {
+    padding-left: 0; // Убираем отступ на мобильных
+    text-align: center;
+    &__title {
+        font-size: 32px;
+        margin-top: 20px;
+    }
+
+    &__permit {
+        max-width: 100px;
+    }
+  }
+
+  .left-content__permits {
+    // flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .right-content {
+    padding-right: 0;
+    text-align: center;
+    margin-right: 0;
+    width:90%;
+    padding-right: 0;
+    padding-left: 0;
+    &__price-text {
+        font-size: 32px;
+    }
+
+    &__price-subtext {
+        font-size: 20px;
+    }
+  }
+}
