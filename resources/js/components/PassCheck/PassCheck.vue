@@ -84,7 +84,7 @@ import SubscribeForm from './SubscribeForm.vue';
 // State Layer
 const showLoader = ref(false);
 const passNumberEmpty = ref(false);
-const passNumber = ref('А273ОЕ37');
+const passNumber = ref('');
 import { nextTick } from 'vue';
 
 var result = ref(null);
