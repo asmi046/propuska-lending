@@ -29,6 +29,24 @@
             storageUrl: '{{ Storage::url('') }}'
         };
     </script>
+
+    <!-- Yandex.Metrika counter -->
+        <script type="text/javascript" >
+            (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+            ym(102425021, "init", {
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true,
+                    webvisor:true
+            });
+        </script>
+        <noscript><div><img src="https://mc.yandex.ru/watch/102425021" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
 </head>
 <body>
     @include("allicon")
@@ -63,8 +81,8 @@
                 <p class="copyright__text">© 2025 Проверка пропусков на МКАД. Все права защищены.</p>
             </div>
             <div class="footer__right policy-links">
-                <a href="/policy" class="policy-links__link">Политика конфиденциальности</a>
-                <a href="/personal-data" class="policy-links__link">Согласие на обработку персональных данных</a>
+                <a href="/page/politika-v-oblasti-obrabotki-personalnyx-dannyx" class="policy-links__link">Политика конфиденциальности</a>
+                <a href="/page/soglasie-na-obrabotku-personalnyx-dannyx" class="policy-links__link">Согласие на обработку персональных данных</a>
             </div>
             </div>
             <div class="footer__bottom info-block">
