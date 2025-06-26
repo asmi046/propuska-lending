@@ -24,53 +24,12 @@
         </template>
     </pass-check>
 
-
-    {{-- <section class="grid-table" id="grid-table">
-    <div class="container grid-table__container">
-        <div class="grid-table__header">
-        <div class="grid-table__cell" data-label="Госномер">Госномер</div>
-        <div class="grid-table__cell" data-label="Тип пропуска">Тип пропуска</div>
-        <div class="grid-table__cell" data-label="БА номер">БА номер</div>
-        <div class="grid-table__cell" data-label="Дата начала действия">Дата начала действия</div>
-        <div class="grid-table__cell" data-label="Дата окончания действия">Дата окончания действия</div>
-        <div class="grid-table__cell" data-label="Статус">Статус</div>
-        </div>
-
-        <div class="grid-table__row">
-        <div class="grid-table__cell" data-label="Госномер">M986EY198</div>
-        <div class="grid-table__cell" data-label="Тип пропуска">СК (Дневной)</div>
-        <div class="grid-table__cell" data-label="БА номер">БА 1953218</div>
-        <div class="grid-table__cell" data-label="Дата начала действия">05.06.2025</div>
-        <div class="grid-table__cell" data-label="Дата окончания действия">03.06.2026</div>
-        <div class="grid-table__cell" data-label="Статус">Аннулирован</div>
-        </div>
-
-        <div class="grid-table__row grid-table__row--annulled">
-        <div class="grid-table__cell" data-label="Госномер">M986EY198</div>
-        <div class="grid-table__cell" data-label="Тип пропуска">СК (Дневной)</div>
-        <div class="grid-table__cell" data-label="БА номер">БА 1953218</div>
-        <div class="grid-table__cell" data-label="Дата начала действия">05.06.2025</div>
-        <div class="grid-table__cell" data-label="Дата окончания действия">03.06.2026</div>
-        <div class="grid-table__cell" data-label="Статус">Аннулирован</div>
-        </div>
-
-        <div class="grid-table__row grid-table__row--active">
-        <div class="grid-table__cell" data-label="Госномер">M986EY198</div>
-        <div class="grid-table__cell" data-label="Тип пропуска">СК (Дневной)</div>
-        <div class="grid-table__cell" data-label="БА номер">БА 1953218</div>
-        <div class="grid-table__cell" data-label="Дата начала действия">05.06.2025</div>
-        <div class="grid-table__cell" data-label="Дата окончания действия">03.06.2026</div>
-        <div class="grid-table__cell" data-label="Статус">365</div>
-        </div>
-    </div>
-    </section> --}}
-
 </div>
 
 
 <section class="banner-section" id="banner-section">
     <div class="container banner-section__container">
-        <div class="banner-section__content">
+        <a href="#consult" class="banner-section__content">
             <div class="banner-section__overlay"></div>
             <div class="banner-section__left left-content">
                 <h2 class="left-content__title">Помощь в оформлении пропуска</h2>
@@ -86,7 +45,7 @@
                     <span class="right-content__price-subtext">годовой пропуск</span>
                 </div>
             </div>
-        </div>
+        </a>
     </div>
 </section>
 

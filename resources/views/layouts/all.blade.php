@@ -52,9 +52,9 @@
     @include("allicon")
     <header class="header" id="header">
         <div class="container header__container">
-            <div class="header__logo logo">
+            <a href="{{ route('home') }}" class="header__logo logo">
                 <img src="{{ asset('img/logo.svg') }}" alt="Логотип компании" class="logo__image">
-            </div>
+            </a>
             <div class="header__actions actions">
                 <a href="#consult" type="button" class="actions__button button">Заказать звонок</a>
             </div>
