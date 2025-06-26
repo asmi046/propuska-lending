@@ -1,6 +1,6 @@
 <template>
 
-    <section class="check-section" id="check-section">
+    <section class="check-section pt_0" id="check-section">
         <div class="container check-section__container">
                 <div class="content__left left-block">
                     <div class="left-block__image-wrapper">
@@ -24,7 +24,7 @@
 
                         <slot name="description"></slot>
 
-                        <a href="#coll" class="left-block__link text_icon">
+                        <a href="#cityselect" class="left-block__link text_icon">
                             <svg class="sprite_icon">
                                 <use xlink:href="#info_icon"></use>
                             </svg>
@@ -41,9 +41,13 @@
 
     <section class="grid-table" id="grid-table">
 
-        <svg v-show="showLoader" class="sprite_icon pass_table_loader">
-            <use xlink:href="#loader_icon"></use>
-        </svg>
+        <div v-show="showLoader"  class="loader_wrapper">
+            <svg class="sprite_icon pass_table_loader">
+                <use xlink:href="#loader_icon"></use>
+            </svg>
+            <p>Производим поиск пропусков...</p>
+        </div>
+
 
         <div v-show="showLoader == false && result" class="container grid-table__container">
             <div class="grid-table__header">

@@ -6,12 +6,19 @@
   font-size: 14px;
   font-family: $main_fonts;
 
-  .pass_table_loader {
-    stroke: $main_color;
-    width: 100px;
-    height: 100px;
-    margin: 20px auto;
-  }
+    .loader_wrapper {
+        text-align: center;
+        color: $main_color;
+        font-family: $head_fonts;
+        font-size: 18px;
+        .pass_table_loader {
+                stroke: $main_color;
+                width: 100px;
+                height: 100px;
+                margin: 20px auto;
+            }
+    }
+
 }
 
 .grid-table__container {

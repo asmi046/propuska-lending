@@ -1,4 +1,2 @@
-<h1>Консультация</h1>
-<P><strong>Имя:</strong> {{ $formData['name']}}</P>
+<h1>Заказать звонок</h1>
 <P><strong>Телефон:</strong> {{ $formData['phone']}}</P>
-<P><strong>Коментарий:</strong> {{ $formData['message']}}</P>

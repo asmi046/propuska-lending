@@ -11,7 +11,7 @@ use Illuminate\Queue\SerializesModels;
 
 use Illuminate\Mail\Mailables\Address;
 
-class ConsultMail extends Mailable
+class SubscribeMail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -37,7 +37,7 @@ class ConsultMail extends Mailable
     {
         return new Envelope(
             from: new Address("zakaz@propuska-mkad-ttk-sk.ru", "Пропуска на МКАД"),
-            subject: 'Заказать звонок',
+            subject: 'Получать уведомления',
         );
     }
 
@@ -49,7 +49,7 @@ class ConsultMail extends Mailable
     public function content()
     {
         return new Content(
-            view: 'mail.consultation.consultation',
+            view: 'mail.consultation.subscribe',
         );
     }
 
