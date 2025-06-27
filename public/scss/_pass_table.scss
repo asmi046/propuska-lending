@@ -14,9 +14,16 @@
         .pass_table_loader {
                 stroke: $main_color;
                 width: 100px;
-                height: 100px;
+                height: 50px;
                 margin: 20px auto;
             }
+    }
+
+    .ch_error_message {
+        color: $main_color;
+        font-size: 18px;
+        text-align: center;
+        font-family: $head_fonts;
     }
 
 }

@@ -16,12 +16,12 @@
                     <div v-for="(item, index) in errorList" :key="index" class="error">{{item}}</div>
                 </div>
                 <label class="checbox_label" for="policy_ch">
-                    <input v-model="policy_ch" type="checkbox" id="policy_ch">
+                    <input  v-model="policy_ch" type="checkbox" id="policy_ch">
                     <span>Я соглашаюсь с <a href="/page/politika-v-oblasti-obrabotki-personalnyx-dannyx"> политикой в области обработки персональных данных</a></span>
                 </label>
 
                 <label class="checbox_label" for="accept_ch">
-                    <input v-model="accept_ch" type="checkbox" id="accept_ch">
+                    <input  v-model="accept_ch" type="checkbox" id="accept_ch">
                     <span>Я даю <a href="/page/soglasie-na-obrabotku-personalnyx-dannyx">согласие на обработку моих персональных данных</a></span>
                 </label>
                 <br>
@@ -54,8 +54,8 @@ const props = defineProps({
     subtitle: String
 });
 
-const policy_ch = ref(false)
-const accept_ch = ref(false)
+const policy_ch = ref(true)
+const accept_ch = ref(true)
 
 const phone = ref("");
 const showModal = ref(false);

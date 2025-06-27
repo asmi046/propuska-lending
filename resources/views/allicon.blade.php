@@ -35,6 +35,20 @@
         <path d="M6 0C9.31371 0 12 2.68629 12 6C12 9.31371 9.31371 12 6 12C2.68629 12 0 9.31371 0 6C0 2.68629 2.68629 0 6 0ZM6 10C6.55228 10 7 9.55228 7 9L7 6C7 5.44772 6.55228 5 6 5C5.44772 5 5 5.44772 5 6L5 9C5 9.55228 5.44772 10 6 10ZM6 4C6.55228 4 7 3.55229 7 3C7 2.44772 6.55228 2 6 2C5.44772 2 5 2.44772 5 3C5 3.55229 5.44772 4 6 4Z" fill="white"/>
     </symbol>
 
+    <symbol id="loader_icon_2" viewBox="0 0 200 200" stroke-width="1.5">
+        <rect fill="#E53E3E" stroke="#E53E3E" stroke-width="15" width="30" height="30" x="25" y="85">
+            <animate attributeName="opacity" calcMode="spline" dur="2" values="1;0;1;" keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="-.4"></animate>
+        </rect>
+
+        <rect fill="#E53E3E" stroke="#E53E3E" stroke-width="15" width="30" height="30" x="85" y="85">
+            <animate attributeName="opacity" calcMode="spline" dur="2" values="1;0;1;" keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="-.2"></animate>
+        </rect>
+
+        <rect fill="#E53E3E" stroke="#E53E3E" stroke-width="15" width="30" height="30" x="145" y="85">
+            <animate attributeName="opacity" calcMode="spline" dur="2" values="1;0;1;" keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="0"></animate>
+        </rect>
+    </symbol>
+
     <symbol id="loader_icon" viewBox="0 0 100 100">
         <circle fill="none" stroke-width="4" stroke-miterlimit="10" cx="50" cy="50" r="48"/>
         <line fill="none" stroke-linecap="round" stroke-width="4" stroke-miterlimit="10" x1="50" y1="50" x2="85" y2="50.5">

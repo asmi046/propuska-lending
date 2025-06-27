@@ -43,11 +43,14 @@
 
         <div v-show="showLoader"  class="loader_wrapper">
             <svg class="sprite_icon pass_table_loader">
-                <use xlink:href="#loader_icon"></use>
+                <use xlink:href="#loader_icon_2"></use>
             </svg>
             <p>Производим поиск пропусков...</p>
         </div>
 
+        <div v-show="showChError" class="ch_error_message">
+            К сожалению во время проверки произошла ошибка! <br> Попробуйте позднее!
+        </div>
 
         <div v-show="showLoader == false && result" class="container grid-table__container">
             <div class="grid-table__header">
@@ -61,7 +64,11 @@
 
             <div
 
-                :class="['grid-table__row', { 'grid-table__row--annulled': item.status == 'Аннулирован', 'grid-table__row--active': item.sys_status == 'Действует', }]"
+                :class="['grid-table__row', { 'grid-table__row--annulled': item.status == 'Аннулирован',
+                'grid-table__row--active': item.sys_status == 'Действует',
+                'grid-table__row--active': (item.status == 'Выдан' && item.deycount > 0),
+
+                }]"
                 v-for="(item, idx) in result"
                 :key="idx"
             >
@@ -70,7 +77,7 @@
                 <div class="grid-table__cell" data-label="Номер пропуска">{{ item.series }} {{ item.pass_number }}</div>
                 <div class="grid-table__cell" data-label="Дата начала действия">{{ item.valid_from.substr(0, 10) }}</div>
                 <div class="grid-table__cell" data-label="Дата окончания действия">{{ item.valid_to.substr(0, 10) }}</div>
-                <div class="grid-table__cell" data-label="Осталось дней">{{ item.deycount }}</div>
+                <div class="grid-table__cell" data-label="Осталось дней">{{ (item.status == 'Аннулирован')?"Аннулирован":item.deycount }}</div>
             </div>
         </div>
     </section>
@@ -82,6 +89,7 @@ import { ref } from 'vue';
 import SubscribeForm from './SubscribeForm.vue';
 
 // State Layer
+const showChError = ref(false);
 const showLoader = ref(false);
 const passNumberEmpty = ref(false);
 const passNumber = ref('');
@@ -108,14 +116,19 @@ async function checkPass(number) {
     // Переход к якорю с id grid-table во Vue компоненте
 
 
-    await nextTick();
-    const anchor = document.getElementById('grid-table');
-    if (anchor) {
-        anchor.scrollIntoView({ behavior: 'smooth' });
-    }
+
 
     window.grecaptcha.execute('6Ld9iewpAAAAAO66gDOa5ovCsrhc2PkZDo09qkiR', { action: 'submit' }).then(async (token) => {
-        showLoader.value = true;
+        showLoader.value = true
+        showChError.value = false
+        result.value = null
+
+        await nextTick();
+        const anchor = document.getElementById('grid-table');
+        if (anchor) {
+            anchor.scrollIntoView({ behavior: 'smooth' });
+        }
+
         try {
             const response = await axios.get('/pass_check', {
                 params: {
@@ -126,11 +139,13 @@ async function checkPass(number) {
             console.log(response.data);
             result.value = response.data;
         } catch (e) {
+            showChError.value = true;
             console.log('Ошибка запроса')
             console.log(e.response?.data || e.message )
         }
         showLoader.value = false;
     }).catch((e) => {
+        showChError.value = true;
         console.log( 'Ошибка reCAPTCHA' );
     });
 

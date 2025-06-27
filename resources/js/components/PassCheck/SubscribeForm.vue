@@ -30,7 +30,7 @@
             for="policy_ch"
             @click="policyError = false"
             >
-                <input v-model="policy_ch" type="checkbox" id="policy_ch">
+                <input v-model="policy_ch" type="checkbox"  id="policy_ch">
                 <span>Я соглашаюсь с <a href="/page/politika-v-oblasti-obrabotki-personalnyx-dannyx"> политикой в области обработки персональных данных</a></span>
             </label>
 
@@ -74,8 +74,8 @@ import axios from 'axios';
 const name = ref('');
 const email = ref('');
 const phone = ref('');
-const policy_ch = ref(false);
-const accept_ch = ref(false);
+const policy_ch = ref(true);
+const accept_ch = ref(true);
 const phoneError = ref(false);
 const policyError = ref(false);
 const acceptError = ref(false);
