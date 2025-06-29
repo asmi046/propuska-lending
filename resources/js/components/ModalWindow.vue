@@ -11,7 +11,7 @@
             <p class="sub_h">{{subtitle}}</p>
             <form v-show="!showAccept" class="sending_form" action="/send_consult" method="POST">
                 <input type="hidden" name="_token" :value="_token">
-                <input type="text" v-mask="{mask: '+N (NNN) NNN-NN-NN', model: 'cpf' }" name="phone" v-model="phone" placeholder="Телефон*">
+                <input type="text"  name="phone" v-model="phone" placeholder="Телефон*">
                 <div class="error_list_wrap">
                     <div v-for="(item, index) in errorList" :key="index" class="error">{{item}}</div>
                 </div>

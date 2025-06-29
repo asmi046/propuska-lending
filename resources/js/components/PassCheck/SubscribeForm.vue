@@ -19,7 +19,6 @@
             <input
 
                 type="text"
-                v-mask="{mask: '+N (NNN) NNN-NN-NN', model: 'cpf' }"
                 v-model="phone"
                 placeholder="Телефон"
                 :class="['subscribe-form__input', { empty: phoneError }]"
