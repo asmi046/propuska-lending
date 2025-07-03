@@ -73,7 +73,7 @@
                 :key="idx"
             >
                 <div class="grid-table__cell" data-label="Госномер">{{ item.truck_num }}</div>
-                <div class="grid-table__cell" data-label="Тип пропуска">{{ item.pass_zone }} {{ item.pass_zone?("("+item.pass_zone+")"):"" }}</div>
+                <div class="grid-table__cell" data-label="Тип пропуска">{{ item.pass_zone }} {{ item.type_pass?("("+item.type_pass+")"):"" }}</div>
                 <div class="grid-table__cell" data-label="Номер пропуска">{{ item.series }} {{ item.pass_number }}</div>
                 <div class="grid-table__cell" data-label="Дата начала действия">{{ item.valid_from.substr(0, 10) }}</div>
                 <div class="grid-table__cell" data-label="Дата окончания действия">{{ item.valid_to.substr(0, 10) }}</div>
